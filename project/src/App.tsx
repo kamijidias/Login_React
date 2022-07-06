@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Routes, Link } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Private } from './pages/Private';
+import { RequireAuth } from './contexts/Audh/RequireAuth';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <hr />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/private" element={<Private />} />
+        <Route path="/private" element={<RequireAuth><Private/></RequireAuth>} />
       </Routes>
     </div>
   );
@@ -26,4 +27,3 @@ function App() {
 
 export default App;
 
-//32/28
